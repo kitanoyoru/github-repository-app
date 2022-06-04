@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env SERVE=true webpack serve",
     "build": "webpack",
-    "build-prod": "webpack --mode=production"
+    "build-prod": "webpack --mode=production",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,12 @@
     "babel-loader": "^8.2.5",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
@@ -46,9 +53,13 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
+    "react-spinners": "^0.12.0",
     "redux": "^4.2.0"
   }
 }

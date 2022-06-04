@@ -12,11 +12,11 @@ if (process.env.NODE_ENV === "production") {
 
 const plugins = [
   new MiniCssExtractPlugin({
-    filename: "[name].[contenthash].css",
+    filename: "[name].[contenthash].css"
   }),
   new HtmlWebpackPlugin({
-    template: "./public/index.html",
-  }),
+    template: "./public/index.html"
+  })
 ];
 
 if (process.env.SERVE) {
@@ -31,13 +31,13 @@ module.exports = {
   entry: "./src/index.js",
   devServer: {
     static: "./dist",
-    hot: true,
+    hot: true
   },
 
   output: {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/[hash][ext][query]",
-    clean: true,
+    clean: true
   },
 
   module: {
@@ -49,16 +49,16 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "sass-loader",
-        ],
+          "sass-loader"
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
-        type: mode === "production" ? "asset" : "asset/resource",
+        type: mode === "production" ? "asset" : "asset/resource"
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: "asset/resource"
       },
       {
         test: /\.jsx?$/,
@@ -66,10 +66,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            cacheDirectory: true,
-          },
-        },
-      },
-    ],
-  },
+            cacheDirectory: true
+          }
+        }
+      }
+    ]
+  }
 };
